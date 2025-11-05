@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="id" data-bs-theme="light">
-      <style>
-        /* Simple wedding-style loader with white text */
-        .wedding-loader { min-height: 100vh; display:flex; align-items:center; justify-content:center; }
-        /* darker card so white text reads well */
-        .wedding-card { max-width: 420px; width:90%; background: rgba(0,0,0,0.48); border-radius:16px; box-shadow: 0 8px 30px rgba(0,0,0,0.32); padding:28px; text-align:center; }
-        .wedding-bg { position: absolute; inset:0; background-image: url('./assets/images/bg.JPG'); background-size: cover; background-position: center; filter: blur(6px) brightness(0.45); z-index:0; }
-        .wedding-card * { position:relative; z-index:1; color: #ffffff; }
-        .couple-names { font-family: 'Josefin Sans', serif; font-size:1.6rem; letter-spacing:0.6px; margin: 0 0 6px; color: #fff; }
-        .wedding-date { color: rgba(255,255,255,0.85); margin-bottom:14px; }
-        .loader-ornament { margin: 14px auto 18px; width:48px; height:48px; display:inline-block; position:relative; }
-        .heart { width:18px; height:18px; background:#ff6b6b; transform: rotate(-45deg); border-radius:3px 3px 0 0; position:absolute; left:50%; top:50%; margin-left:-9px; margin-top:-9px; animation:pop 1s infinite; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
-        .heart::before, .heart::after { content:''; width:18px; height:18px; background:#ff6b6b; border-radius:50%; position:absolute; }
-        .heart::before { top:-9px; left:0; }
-        .heart::after { left:9px; top:0; }
-        @keyframes pop { 0%{ transform: scale(0.9) rotate(-45deg); opacity:0.6 } 50%{ transform: scale(1.12) rotate(-45deg); opacity:1 } 100%{ transform: scale(0.95) rotate(-45deg); opacity:0.9 } }
-        .loader-text { font-size:0.95rem; color: rgba(255,255,255,0.95); }
-        .small-note { font-size:0.78rem; color: rgba(255,255,255,0.8); margin-top:10px; }
-          /* Make loading card full-width on small screens to avoid 'reading mode' */
-          @media (max-width: 576px) {
-            .wedding-card { max-width: 100%; width: 100%; border-radius: 0; padding: 14px; margin: 0; }
-            .wedding-loader { align-items: flex-start; padding-top: 8vh; }
-            .wedding-bg { filter: blur(4px) brightness(0.45); }
-          }
-      </style>
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+  <head>
+    <!-- Common Tag -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website Undangan Pernikahan Tegar dan Hesti Secara Online</title>
+
+    <!-- SEO Tag -->
+    <meta name="author" content="dewanakl" />
+    <meta name="language" content="id" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <meta
+      name="title"
+      content="Website Undangan Pernikahan Tegar dan ciwinya Secara Online"
+    />
+    <meta
+      name="description"
+      content="Website Undangan Pernikahan Tegar dan ciwinya Secara Online"
     />
     <meta
       name="keywords"
@@ -32,11 +25,11 @@
     />
     <meta
       property="og:title"
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+      content="Website Undangan Pernikahan Tegar dan ciwinya Secara Online"
     />
     <meta
       property="og:description"
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+      content="Website Undangan Pernikahan Tegar dan ciwinya Secara Online"
     />
     <meta
       property="og:keywords"
@@ -44,16 +37,16 @@
     />
     <meta
       property="og:image"
-      content="https://ulems.my.id/assets/images/bg.JPG"
+      content="https://ulems.my.id/assets/images/bg.webp"
     />
     <meta
       property="og:image:secure_url"
-      content="https://ulems.my.id/assets/images/bg.JPG"
+      content="https://ulems.my.id/assets/images/bg.webp"
     />
     <meta property="og:image:type" content="image/webp" />
     <meta
       property="og:image:alt"
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+      content="Website Undangan Pernikahan Tegar dan ciwinya Secara Online"
     />
     <meta property="og:image:width" content="980" />
     <meta property="og:image:height" content="980" />
@@ -62,14 +55,14 @@
     <meta property="og:url" content="https://ulems.my.id" />
     <meta
       property="og:site_name"
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+      content="Website Undangan Pernikahan Wahyu dan Riski Secara Online"
     />
 
     <!-- Appearance -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-title"
-      content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
+      content="Website Undangan Pernikahan Wahyu dan Riski Secara Online"
     />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark light" />
@@ -144,6 +137,38 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
     />
 
+    <!-- Critical inline styles for the welcome card to render immediately -->
+    <style>
+      /* Minimal critical CSS so invite appears instantly before external CSS loads */
+      .invite-card {
+        max-width: 540px;
+        width: calc(100% - 2rem);
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        background: #fff;
+        color: inherit;
+        margin: 0 auto;
+      }
+      .invite-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .invite-card .font-esthetic {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+      }
+      @media (max-width: 576px) {
+        .invite-card {
+          padding: 1rem;
+        }
+        .invite-card .font-esthetic {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+
     <!-- Dependencies CSS -->
     <link
       rel="stylesheet"
@@ -157,6 +182,9 @@
       integrity="sha256-4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4="
       crossorigin="anonymous"
     />
+    <!-- Load base CSS in parallel (avoid @import inside guest.css which blocks) -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/guest.css" />
 
     <!-- Dependencies JS -->
@@ -166,42 +194,8 @@
       integrity="sha256-5P1JGBOIxI7FBAvT/mb1fCnI5n/NhQKzNUuW7Hq0fMc="
       crossorigin="anonymous"
     ></script>
+    <!-- Defer main guest script so parsing & rendering isn't blocked -->
     <script defer src="./dist/guest.js"></script>
-    
-    <!-- Mobile scaling adjustments: enlarge UI for small screens -->
-    <style>
-      @media (max-width: 576px) {
-        /* scale base font a bit for legibility */
-        html { font-size: 115%; }
-
-        /* Headings and esthetic font */
-        .font-esthetic { font-size: 1.25rem !important; }
-        h1.font-esthetic { font-size: 2.4rem !important; }
-        h2.font-esthetic { font-size: 1.8rem !important; }
-
-        /* Arabic font a bit larger */
-        .font-arabic { font-size: 1.5rem !important; }
-
-        /* Bigger avatar / center image */
-        .img-center-crop { width: 9rem !important; height: 9rem !important; }
-
-        /* Buttons larger and easier to tap */
-        .btn { padding: .6rem 1rem !important; font-size: 1rem !important; }
-
-        /* Navbar labels readable */
-        .navbar-nav .nav-link span { font-size: 0.9rem !important; }
-
-        /* Gallery and carousel tweaks */
-        .gallery-grid .item { aspect-ratio: 3/4; }
-        .carousel-img { aspect-ratio: 4/3; }
-
-        /* Loading card adjustments already responsive; ensure larger text */
-        .wedding-card { padding: 18px !important; }
-
-        /* Make scrollbar areas larger */
-        .with-scrollbar { scrollbar-width: auto; }
-      }
-    </style>
   </head>
 
   <!-- Jika tidak menggunakan komentar, hapus atribut data-key dan data-url, serta abaikan file dashboard.html. -->
@@ -227,6 +221,7 @@
   <body
     data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743"
     data-url="https://api.ulems.my.id/"
+    data-audio="./assets/music/pure-love-304010.mp3"
     data-confetti="true"
     data-time="2026-01-11 09:00:00"
     data-comment="false"
@@ -247,13 +242,11 @@
                 style="opacity: 0"
               >
                 <img
-                  src="./assets/images/bg.JPG"
-                  data-src="./assets/images/bg.JPG"
+                  src="./assets/images/placeholder.webp"
+                  data-src="./assets/images/bg.webp"
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div
@@ -261,13 +254,11 @@
                 style="opacity: 0"
               >
                 <img
-                  src="./assets/images/bg.JPG"
-                  data-src="./assets/images/bg.JPG"
+                  src="./assets/images/placeholder.webp"
+                  data-src="./assets/images/bg.webp"
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div
@@ -275,13 +266,11 @@
                 style="opacity: 0"
               >
                 <img
-                  src="./assets/images/bg.JPG"
-                  data-src="./assets/images/bg.JPG"
+                  src="./assets/images/placeholder.webp"
+                  data-src="./assets/images/bg.webp"
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
@@ -316,8 +305,6 @@
               data-src="./assets/images/bg.JPG"
               alt="bg"
               class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home"
-              fetchpriority="high"
-              decoding="async"
             />
 
             <div
@@ -427,8 +414,6 @@
                     alt="cowo"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
-                    loading="lazy"
-                    decoding="async"
                   />
                   <h2 class="font-esthetic m-0" style="font-size: 2.125rem">
                     Tegar Saputra
@@ -490,8 +475,6 @@
                     alt="cewe"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
-                    loading="lazy"
-                    decoding="async"
                   />
                   <h2 class="font-esthetic m-0" style="font-size: 2.125rem">
                     Hesti Damayanti
@@ -1498,11 +1481,13 @@
             The Wedding Of
           </h2>
 
+          <!-- Use low-res placeholder as initial src; real image will be lazy-loaded by existing image loader (data-src) -->
           <img
-            src="./assets/images/bg.JPG"
+            src="./assets/images/placeholder.webp"
             data-src="./assets/images/bg.JPG"
             alt="background"
             class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"
+            fetchpriority="low"
           />
 
           <h2 class="font-esthetic mb-4" style="font-size: 2.25rem">
@@ -1514,7 +1499,6 @@
           ></div>
 
           <button
-            id="open-invitation-btn"
             type="button"
             class="btn btn-light shadow rounded-4 mt-3 mx-auto"
             onclick="undangan.guest.open(this)"
@@ -1554,7 +1538,7 @@
       </button>
     </div>
 
-    <!-- Loading Page (wedding style) -->
+    <!-- Loading Page -->
     <div class="loading-page bg-white-black" id="loading" style="opacity: 1">
       <style>
         /* Simple wedding-style loader */
@@ -1688,10 +1672,17 @@
           </div>
 
           <!-- keep progress bar elements for compatibility with guest.js -->
-          <div class="progress mt-3" role="progressbar" style="height: 0.4rem;" aria-hidden="true">
-            <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+          <div
+            class="progress mt-3"
+            role="progressbar"
+            style="height: 0.4rem"
+            aria-hidden="true"
+          >
+            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
           </div>
-          <small id="progress-info" class="d-none">Booting application...</small>
+          <small id="progress-info" class="d-none"
+            >Booting application...</small
+          >
 
           <div class="loader-ornament" aria-hidden="true">
             <div class="heart"></div>
@@ -1756,38 +1747,53 @@
       </div>
     </div>
 
-    <!-- Small script to load/play audio on user interaction (works around Safari autoplay rules) -->
-    <script>
-      (function () {
-        try {
-          const btn =
-            document.getElementById("open-invitation-btn") ||
-            document.querySelector('button[onclick^="undangan.guest.open"]');
-          if (!btn) return;
+    <!-- Modal Image -->
+    <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border border-0">
+          <div class="modal-body p-0">
+            <div class="d-flex position-absolute top-0 end-0">
+              <a
+                class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1"
+                role="button"
+                target="_blank"
+                href="./assets/images/placeholder.webp"
+                id="button-modal-click"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square"
+                  style="width: 1em !important"
+                ></i>
+              </a>
+              <button
+                class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1"
+                id="button-modal-download"
+              >
+                <i
+                  class="fa-solid fa-download"
+                  style="width: 1em !important"
+                ></i>
+              </button>
+              <button
+                class="btn d-flex justify-content-center align-items-center bg-overlay-auto p-2 m-1 rounded-circle border shadow-sm z-1"
+                data-bs-dismiss="modal"
+              >
+                <i
+                  class="fa-solid fa-circle-xmark"
+                  style="width: 1em !important"
+                ></i>
+              </button>
+            </div>
 
-          const audioSrc = "./assets/music/pure-love-304010.mp3";
-          const audio = new Audio(audioSrc);
-          audio.preload = "auto";
-          audio.loop = true;
-          audio.crossOrigin = "anonymous";
-
-          // Play once on first user gesture (click/tap). Safari requires a user gesture.
-          const onFirst = () => {
-            audio.play().catch(() => {
-              // play may still fail in some restrictive cases; ignore silently
-            });
-            btn.removeEventListener("click", onFirst);
-          };
-
-          btn.addEventListener("click", onFirst, { passive: true });
-
-          // Expose audio for manual control if needed
-          window.__invitationAudio = audio;
-        } catch (e) {
-          // safe fail
-          console.error("audio init error", e);
-        }
-      })();
-    </script>
+            <img
+              src="./assets/images/placeholder.webp"
+              class="img-fluid w-100 rounded-4 cursor-pointer"
+              alt="image"
+              id="show-modal-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
