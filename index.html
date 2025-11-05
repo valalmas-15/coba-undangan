@@ -17,6 +17,12 @@
         @keyframes pop { 0%{ transform: scale(0.9) rotate(-45deg); opacity:0.6 } 50%{ transform: scale(1.12) rotate(-45deg); opacity:1 } 100%{ transform: scale(0.95) rotate(-45deg); opacity:0.9 } }
         .loader-text { font-size:0.95rem; color: rgba(255,255,255,0.95); }
         .small-note { font-size:0.78rem; color: rgba(255,255,255,0.8); margin-top:10px; }
+          /* Make loading card full-width on small screens to avoid 'reading mode' */
+          @media (max-width: 576px) {
+            .wedding-card { max-width: 100%; width: 100%; border-radius: 0; padding: 14px; margin: 0; }
+            .wedding-loader { align-items: flex-start; padding-top: 8vh; }
+            .wedding-bg { filter: blur(4px) brightness(0.45); }
+          }
       </style>
       content="Website Undangan Pernikahan Tegar dan Hesti Secara Online"
     />
