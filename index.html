@@ -1646,6 +1646,12 @@
             </div>
           </div>
 
+          <!-- keep progress bar elements for compatibility with guest.js -->
+          <div class="progress mt-3" role="progressbar" style="height: 0.4rem;" aria-hidden="true">
+            <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+          </div>
+          <small id="progress-info" class="d-none">Booting application...</small>
+
           <div class="loader-ornament" aria-hidden="true">
             <div class="heart"></div>
           </div>
