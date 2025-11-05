@@ -159,7 +159,7 @@
       integrity="sha256-5P1JGBOIxI7FBAvT/mb1fCnI5n/NhQKzNUuW7Hq0fMc="
       crossorigin="anonymous"
     ></script>
-    <script src="./dist/guest.js"></script>
+    <script defer src="./dist/guest.js"></script>
   </head>
 
   <!-- Jika tidak menggunakan komentar, hapus atribut data-key dan data-url, serta abaikan file dashboard.html. -->
@@ -185,7 +185,6 @@
   <body
     data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743"
     data-url="https://api.ulems.my.id/"
-    data-audio="./assets/music/pure-love-304010.mp3"
     data-confetti="true"
     data-time="2026-01-11 09:00:00"
     data-comment="false"
@@ -211,6 +210,8 @@
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div
@@ -223,6 +224,8 @@
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div
@@ -235,6 +238,8 @@
                   alt="bg"
                   class="bg-cover-home"
                   style="mask-image: none; opacity: 30%"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -269,6 +274,8 @@
               data-src="./assets/images/bg.JPG"
               alt="bg"
               class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home"
+              fetchpriority="high"
+              decoding="async"
             />
 
             <div
@@ -378,6 +385,8 @@
                     alt="cowo"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <h2 class="font-esthetic m-0" style="font-size: 2.125rem">
                     Tegar Saputra
@@ -439,6 +448,8 @@
                     alt="cewe"
                     onclick="undangan.guest.modal(this)"
                     class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <h2 class="font-esthetic m-0" style="font-size: 2.125rem">
                     Hesti Damayanti
