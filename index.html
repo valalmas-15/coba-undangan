@@ -1512,47 +1512,149 @@
       </button>
     </div>
 
-    <!-- Loading Page -->
+    <!-- Loading Page (wedding style) -->
     <div class="loading-page bg-white-black" id="loading" style="opacity: 1">
-      <div
-        class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto"
-      >
-        <div class="d-flex flex-column width-loading text-center">
-          <img
-            src="./assets/images/placeholder.webp"
-            data-src="./assets/images/icon-192x192.png"
-            fetchpriority="high"
-            class="img-fluid mb-3 mx-auto object-fit-cover opacity-0"
-            alt="icon"
-            style="width: 3.5rem; height: 3.5rem"
-          />
+      <style>
+        /* Simple wedding-style loader */
+        .wedding-loader {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .wedding-card {
+          max-width: 420px;
+          width: 90%;
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 16px;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          padding: 28px;
+          text-align: center;
+        }
+        .wedding-bg {
+          position: absolute;
+          inset: 0;
+          background-image: url("./assets/images/bg.JPG");
+          background-size: cover;
+          background-position: center;
+          filter: blur(6px) brightness(0.45);
+          z-index: 0;
+        }
+        .wedding-card * {
+          position: relative;
+          z-index: 1;
+        }
+        .couple-names {
+          font-family: "Josefin Sans", serif;
+          font-size: 1.6rem;
+          letter-spacing: 0.6px;
+          margin: 0 0 6px;
+        }
+        .wedding-date {
+          color: #6b6b6b;
+          margin-bottom: 14px;
+        }
+        .loader-ornament {
+          margin: 14px auto 18px;
+          width: 48px;
+          height: 48px;
+          display: inline-block;
+          position: relative;
+        }
+        .heart {
+          width: 18px;
+          height: 18px;
+          background: #d9534f;
+          transform: rotate(-45deg);
+          border-radius: 3px 3px 0 0;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -9px;
+          margin-top: -9px;
+          animation: pop 1s infinite;
+        }
+        .heart::before,
+        .heart::after {
+          content: "";
+          width: 18px;
+          height: 18px;
+          background: #d9534f;
+          border-radius: 50%;
+          position: absolute;
+        }
+        .heart::before {
+          top: -9px;
+          left: 0;
+        }
+        .heart::after {
+          left: 9px;
+          top: 0;
+        }
+        @keyframes pop {
+          0% {
+            transform: scale(0.9) rotate(-45deg);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.12) rotate(-45deg);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(0.95) rotate(-45deg);
+            opacity: 0.9;
+          }
+        }
+        .loader-text {
+          font-size: 0.95rem;
+          color: #444;
+        }
+        .small-note {
+          font-size: 0.78rem;
+          color: #8c8c8c;
+          margin-top: 10px;
+        }
+      </style>
+
+      <div class="wedding-bg" aria-hidden="true"></div>
+      <div class="wedding-loader">
+        <div class="wedding-card" role="status" aria-live="polite">
           <div
-            class="progress"
-            role="progressbar"
-            style="height: 0.5rem"
-            aria-label="progress bar"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+            "
           >
-            <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+            <img
+              src="./assets/images/icon-192x192.png"
+              alt="icon"
+              style="
+                width: 56px;
+                height: 56px;
+                border-radius: 12px;
+                object-fit: cover;
+              "
+            />
+            <div style="text-align: left">
+              <div class="couple-names">Tegar &amp; Hesti</div>
+              <div class="wedding-date">
+                Minggu, 11 Januari 2026 • Gedung Balai Warga RW 05
+              </div>
+            </div>
           </div>
-          <small
-            class="d-none mt-1 text-theme-auto"
-            id="progress-info"
-            style="font-size: 0.8rem"
-            >Booting application...</small
-          >
-          <noscript>
-            <small class="mt-1 text-danger"
-              >Sorry, this invitation requires javascript to work</small
-            >
-          </noscript>
-        </div>
-      </div>
-      <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0">
-        <div class="d-flex flex-column">
-          <small class="text-secondary">from</small>
-          <small class="text-theme-auto"
-            ><i class="fa-brands fa-github me-1"></i>dewanakl</small
-          >
+
+          <div class="loader-ornament" aria-hidden="true">
+            <div class="heart"></div>
+          </div>
+
+          <div class="loader-text">
+            Sedang mempersiapkan undangan... Harap tunggu sebentar.
+          </div>
+          <div class="small-note">
+            Terima kasih atas kesabaran dan doa Anda.
+          </div>
         </div>
       </div>
     </div>
