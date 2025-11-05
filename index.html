@@ -1472,6 +1472,7 @@
           ></div>
 
           <button
+            id="open-invitation-btn"
             type="button"
             class="btn btn-light shadow rounded-4 mt-3 mx-auto"
             onclick="undangan.guest.open(this)"
@@ -1604,5 +1605,39 @@
         </div>
       </div>
     </div>
+
+    <!-- Small script to load/play audio on user interaction (works around Safari autoplay rules) -->
+    <script>
+      (function () {
+        try {
+          const btn =
+            document.getElementById("open-invitation-btn") ||
+            document.querySelector('button[onclick^="undangan.guest.open"]');
+          if (!btn) return;
+
+          const audioSrc = "./assets/music/pure-love-304010.mp3";
+          const audio = new Audio(audioSrc);
+          audio.preload = "auto";
+          audio.loop = true;
+          audio.crossOrigin = "anonymous";
+
+          // Play once on first user gesture (click/tap). Safari requires a user gesture.
+          const onFirst = () => {
+            audio.play().catch(() => {
+              // play may still fail in some restrictive cases; ignore silently
+            });
+            btn.removeEventListener("click", onFirst);
+          };
+
+          btn.addEventListener("click", onFirst, { passive: true });
+
+          // Expose audio for manual control if needed
+          window.__invitationAudio = audio;
+        } catch (e) {
+          // safe fail
+          console.error("audio init error", e);
+        }
+      })();
+    </script>
   </body>
 </html>
