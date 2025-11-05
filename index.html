@@ -167,6 +167,41 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./dist/guest.js"></script>
+    
+    <!-- Mobile scaling adjustments: enlarge UI for small screens -->
+    <style>
+      @media (max-width: 576px) {
+        /* scale base font a bit for legibility */
+        html { font-size: 115%; }
+
+        /* Headings and esthetic font */
+        .font-esthetic { font-size: 1.25rem !important; }
+        h1.font-esthetic { font-size: 2.4rem !important; }
+        h2.font-esthetic { font-size: 1.8rem !important; }
+
+        /* Arabic font a bit larger */
+        .font-arabic { font-size: 1.5rem !important; }
+
+        /* Bigger avatar / center image */
+        .img-center-crop { width: 9rem !important; height: 9rem !important; }
+
+        /* Buttons larger and easier to tap */
+        .btn { padding: .6rem 1rem !important; font-size: 1rem !important; }
+
+        /* Navbar labels readable */
+        .navbar-nav .nav-link span { font-size: 0.9rem !important; }
+
+        /* Gallery and carousel tweaks */
+        .gallery-grid .item { aspect-ratio: 3/4; }
+        .carousel-img { aspect-ratio: 4/3; }
+
+        /* Loading card adjustments already responsive; ensure larger text */
+        .wedding-card { padding: 18px !important; }
+
+        /* Make scrollbar areas larger */
+        .with-scrollbar { scrollbar-width: auto; }
+      }
+    </style>
   </head>
 
   <!-- Jika tidak menggunakan komentar, hapus atribut data-key dan data-url, serta abaikan file dashboard.html. -->
