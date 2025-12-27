@@ -280,6 +280,7 @@
             <h2 class="font-esthetic mb-4" style="font-size: 2rem">
               Tegar &amp; Hesti
             </h2>
+            <p id="guest-name" class="m-0 fw-semibold" style="font-size:1rem; display:none;">Untuk: <span id="guest-name-text"></span></p>
             <p class="m-0" style="font-size: 1rem">Minggu, 11 Januari 2026</p>
           </div>
         </div>
@@ -289,11 +290,12 @@
       <div class="col-sm-7 col-md-6 col-lg-5 col-xl-4 col-xxl-3 m-0 p-0">
         <!-- Main Content -->
         <main
-          data-bs-spy="scroll"
-          data-bs-target="#navbar-menu"
-          data-bs-root-margin="25% 0% 0% 0%"
-          data-bs-smooth-scroll="true"
-          tabindex="0"
+
+              <h2 class="font-esthetic mb-4" style="font-size: 2rem">
+                Tegar &amp; Hesti
+              </h2>
+              <p id="guest-name" class="m-0 fw-semibold" style="font-size:1rem; display:none;">Untuk: <span id="guest-name-text"></span></p>
+              <p class="m-0" style="font-size: 1rem">Minggu, 11 Januari 2026</p>
         >
           <!-- Home -->
           <section
@@ -1618,5 +1620,36 @@
         </div>
       </div>
     </div>
+    <script>
+      (function(){
+        function getParam(name){
+          try{
+            var params = new URLSearchParams(window.location.search);
+            return params.get(name);
+          }catch(e){
+            return null;
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+          var nama = getParam('nama') || getParam('name') || getParam('to');
+          if(!nama){
+            if(window.location.hash && window.location.hash.indexOf('=')>-1){
+              var h = window.location.hash.substring(1);
+              var pairs = new URLSearchParams(h);
+              nama = pairs.get('nama') || pairs.get('name') || pairs.get('to');
+            }
+          }
+          if(nama){
+            var els = document.querySelectorAll('#guest-name');
+            for(var i=0;i<els.length;i++){
+              els[i].style.display = '';
+            }
+            var textEl = document.getElementById('guest-name-text');
+            if(textEl) textEl.textContent = nama.replace(/\+/g,' ');
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
